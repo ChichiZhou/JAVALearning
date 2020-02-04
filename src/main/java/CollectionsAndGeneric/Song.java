@@ -1,7 +1,7 @@
 package CollectionsAndGeneric;
 
 public class Song implements Comparable<Song> {
-    private String title;
+    private String title;     // title 被用作指针，即使没有指向某个对象，也是可以单独存在的
     private String artist;
 
     public Song(String title, String artist){
