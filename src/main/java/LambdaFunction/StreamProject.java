@@ -37,6 +37,13 @@ public class StreamProject {
         List<Integer> fruitsLength = fruits.stream().map(String :: length).collect(Collectors.toList());
         System.out.println(fruitsLength);
 
+        System.out.println("\n************\n");
+        Stream.<List<Person>>builder().add(PersonRepository.getAllPersons()).build().forEach(
+                per -> System.out.println(per.get(0).getName()));   // 这里说明 stream 中包含的是整个容器的数据类型，而不是容器中的单个元素
+                                                                    // Stream 也可以用 builder
+        Stream.of(PersonRepository.getAllPersons()).forEach(per -> System.out.println(per.get(0).getName())); // 这么写也是可以的
+
+
 
 
 
