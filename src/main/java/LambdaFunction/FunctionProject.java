@@ -12,6 +12,8 @@ public class FunctionProject {
          * Consumer 就是干！给啥吃啥但是不吐
          * Predicate 就是看！给啥吃了 但是就告诉你好不好吃
          * Function 就是拉！给啥吃了 但是拉出来不一样的
+         *
+         * 最重要的一点是，这些 lambda 都是可以嵌套的！！！！！！！
          */
         Function<String, String> function = (a) -> {return a.toUpperCase();}; // 或者写成 (a) -> a.toUpperCaer();
         System.out.println("\n************\n");
