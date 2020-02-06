@@ -1,5 +1,6 @@
 package LambdaFunction;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -15,6 +16,8 @@ public class StreamProject {
          * Stream 更像是一个能够迭代的容器。和 iterator 有点像
          * 在这个容器中，可以放入很多 lambda。这些 lambda 可以加到 Stream 这个容器中的每一个元素
          * 还有 Stream 中的一些 API
+         *
+         *
          */
         Stream<Integer> stream = Stream.of(1,2,3,4,5);   // 创建 stream
         stream.forEach(a -> System.out.println(a));
@@ -24,6 +27,15 @@ public class StreamProject {
                 .stream().collect(Collectors.toMap(Person::getName, Person::getHobbies)); // 这里就用到了 Stream 的 API
                                                                                         // 这里也是取出 list 中的元素挨个进行操作的
         System.out.println("\n************\n");
+
+        /**
+         * 注意，map 中的第一个参数是这个 stream 的类型
+         * 第二个参数是这个类型中的方法
+         * 如果要转成别的类型，那么就得在这个类型中写出这个方法
+         */
+        List<String> fruits = Arrays.asList("Apple", "Orange", "Banana");
+        List<Integer> fruitsLength = fruits.stream().map(String :: length).collect(Collectors.toList());
+        System.out.println(fruitsLength);
 
 
 
