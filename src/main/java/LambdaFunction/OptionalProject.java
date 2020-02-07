@@ -39,12 +39,5 @@ public class OptionalProject {
         System.out.println(Optional.ofNullable("0"));
         String salary = Optional.ofNullable("0").orElse("Nothing to show");
         System.out.println(salary);
-
-
-
-
-
-
-        
     }
 }
