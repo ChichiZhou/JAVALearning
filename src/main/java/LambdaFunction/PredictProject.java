@@ -1,6 +1,7 @@
 package LambdaFunction;
 
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -18,6 +19,11 @@ public class PredictProject {
         personList.stream().filter(personHeight).collect(Collectors.toList());   // stream 的 filter 是要接受一个 Predicate 的
 
         System.out.println("\n************\n");
+
+        System.out.println("\n************\n");
+        Predicate<String> predicateReturn = (a) -> {return true;};   // 因为 Predicate 是有 return 值的，所以可以写 return 语句
+        predicateReturn.test("fdsaf");
+
 
     }
 }

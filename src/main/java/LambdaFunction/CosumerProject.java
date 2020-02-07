@@ -35,6 +35,5 @@ public class CosumerProject {
         BiConsumer<String, List<String>> biConsumerList = (name, hobbies) -> System.out.println(name + " " + hobbies); // 要记住，这里可以传进不同类型的参数 ！！！！！！！！！！
         personList.forEach(per -> biConsumerList.accept(per.getName(), per.getHobbies()));   // 虽然 forEach 只能接受一个 Consumer ，但是这里属于 consumer 里面套 consumer !!!!!!!!
 
-
     }
 }
