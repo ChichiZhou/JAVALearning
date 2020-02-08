@@ -17,7 +17,11 @@ public class StreamProject {
          * 在这个容器中，可以放入很多 lambda。这些 lambda 可以加到 Stream 这个容器中的每一个元素
          * 还有 Stream 中的一些 API
          *
-         *
+         * stream 常用的方法
+         * map: 输入值是映射（调用目标对象的方法，返回该方法所返回的对象）返回值还是 stream
+         * filter： 输入值是 predicate，返回值是 boolean
+         * collect：输入值是想要collect到的容器，返回值是这个容器
+         * forEach：输入值是一个 consumer，能够对这个容器中的所有对象进行操作
          */
         Stream<Integer> stream = Stream.of(1,2,3,4,5);   // 创建 stream
         stream.forEach(a -> System.out.println(a));
@@ -34,7 +38,8 @@ public class StreamProject {
          * 如果要转成别的类型，那么就得在这个类型中写出这个方法
          */
         List<String> fruits = Arrays.asList("Apple", "Orange", "Banana");
-        List<Integer> fruitsLength = fruits.stream().map(String :: length).collect(Collectors.toList());
+        List<Integer> fruitsLength = fruits.stream().map(String :: length).collect(Collectors.toList());  // map 同样也返回一个 stream
+
         System.out.println(fruitsLength);
 
         System.out.println("\n************\n");

@@ -14,6 +14,8 @@ public class FunctionProject {
          * Function 就是拉！给啥吃了 但是拉出来不一样的
          *
          * 最重要的一点是，这些 lambda 都是可以嵌套的！！！！！！！
+         *
+         * 这里注意，只有 stream 能够迭代所有的元素，function 中的迭代都是 Collection 自身带的迭代器
          */
         Function<String, String> function = (a) -> {return a.toUpperCase();}; // 或者写成 (a) -> a.toUpperCaer();
         System.out.println("\n************\n");
