@@ -12,6 +12,12 @@ public class OptionalProject {
          * 如果是 null，则返回 Optional.empty
          * 当我们在使用一个 method 的时候，不能直接就使用这个对象来调用 method
          * 而是要先判断一下这个对象是否存在
+         *
+         *
+         * Optional 的常用方法
+         * isPresent()：不需要输入值，但是输出值是 boolean
+         * ifPresent()：输入值是一个 lambda
+         * orElse()：输入一个与前面的 T 相同的类型，然后可以让 Optional 返回这个类型
          */
         String name = "Joe";
         System.out.println(Optional.ofNullable(null));      // 这里返回的是 Optional.empty
