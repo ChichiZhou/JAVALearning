@@ -10,6 +10,10 @@ public class AnimalEat {
     public static void main(String[] args) {
         AnimalEat eatlist = new AnimalEat();
         eatlist.go();
+        // 这个输出的是
+        // The class info is class CollectionsAndGeneric.AnimalEat
+        System.out.println("The class info is" + " " + eatlist.getClass());
+
     }
     public void go(){
         animalList.add(new Dog());
@@ -57,4 +61,6 @@ public class AnimalEat {
     public <T> void anotherAddAnimalList(ArrayList<T> list, T newone){
         list.add(newone);
     }
+
+
 }
