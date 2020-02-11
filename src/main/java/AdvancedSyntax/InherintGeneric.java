@@ -1,5 +1,8 @@
 package AdvancedSyntax;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class InherintGeneric {
     public static void main(String[] args) {
         /**
@@ -18,6 +21,11 @@ public class InherintGeneric {
         Son3<String, Integer> son3 = new Son3<>("时琳", 18);
 
         System.out.println("This is son3 " + son3);
+
+        List<Integer> arrayList = Arrays.asList(1,2,3,4,5);
+
+        System.out.println("The toString results for a list is");
+        System.out.println(arrayList.toString());          // 从这里可以看到 toString 该怎么写 （这里用到了 getClass() 和 getName()）
 
     }
 }
