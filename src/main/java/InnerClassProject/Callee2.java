@@ -12,7 +12,7 @@ public class Callee2 extends MyIncrement{
 
         @Override
         public void increment() {
-            Callee2.this.increment();         // 调用外部类必须使用 this
+            Callee2.this.increment();         // 调用外部类必须使用 this。外部类名 + .this. + 方法
         }
     }
 
