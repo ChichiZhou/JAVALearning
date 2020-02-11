@@ -69,7 +69,4 @@ public class AnimalEat {
         System.out.println("This can add dogList because there is no type in the ArrayList<T>");
         list.add(newone);
     }
-
-
-
 }
