@@ -1,10 +1,12 @@
 package AdvancedSyntax;
 
+import lombok.AllArgsConstructor;
+import lombok.NonNull;
+
+@AllArgsConstructor
 public class Fruit {
-    String name;
-    public Fruit(String name){
-        this.name = name;
-    }
+    @NonNull String name;
+
     public String toString(){
         return this.name;
     }
