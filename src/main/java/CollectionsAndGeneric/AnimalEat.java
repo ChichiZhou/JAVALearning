@@ -58,10 +58,10 @@ public class AnimalEat {
         }
     }
 
-    public <T extends Animal> void addAnimals(ArrayList<Animal> list, Animal newOne){   // 这个方法可以添加 new Dog() 或者 new Cat()
+    public <T extends Animal> void addAnimals(ArrayList<Animal> list, T newOne){   // 这个方法可以添加 new Dog() 或者 new Cat()
         System.out.println("Add new element into Animal List");                         // 因为这些都是继承了 Animal 这个接口的
         list.add(newOne);                                                               // 但是这个 list 只能是 Animal
-
+                                                                                   // 这里用 <T extends Animal> 的意识是，凡是用 T 的地方，T 都要是 Animal 的子类
     }
 
     public <T extends Animal> void addAnimalList(ArrayList<T> list, T newone){  // 在返回类型前加一个 T，表示的作用是告诉编译器编译的时候就识别它的类型，
