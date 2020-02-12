@@ -4,8 +4,8 @@ public class Main {
     public static void main(String[] args) {
         /**
          * 泛型
-         *
          * 泛型引入之后，可以将类型当作参数来传递。因此不需要提前定义对象
+         *
          * https://blog.csdn.net/qq564425/article/details/81327767
          *
          */
@@ -17,6 +17,7 @@ public class Main {
         Generic<Fruit> o = new Generic<Fruit>();
         /**
          * 使用泛型类创建对象时，一定要说明类型
+         *
          * 但是使用泛型方法时，不需要说明类型
          */
         System.out.println("-----------------演示一下show_1------------------");

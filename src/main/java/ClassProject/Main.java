@@ -6,13 +6,17 @@ public class Main {
      *
      * Class 又称为 类型信息
      * Class 对象包含了与这个类相关的所有信息。要知道 Class 包含哪些信息，只需要在看这个 Class 类 即可。
-     * 这里理解 "类的相关信息" 是指 类名，比如 ClassProject.FancyToy 以及这个类都实行了哪些接口
+     * 这里理解 "类的相关信息" 是指 类名，比如 ClassProject.FancyToy 以及这个类都实行了哪些接口，实现了哪些方法
      * 比如 for(Class face: c.getInterfaces()){
      *             printInfo(face);
      *         }
      *         输出 ClassProject.HasBatteries
      *
      * 和反射有点关系
+     *
+     * 这里的反射是指 当你获取了一个指向某个并不在你的程序空间中的对象的引用时，用反射来访问这个类。并且获取类的信息
+     * https://jesse505.github.io/2018/03/04/2018-03-04-Java-reflect-01/
+     *
      */
     static void printInfo(Class cc){
         System.out.println("Class name: " + cc.getName() + " is interface? [" + cc.isInterface() + "]");
