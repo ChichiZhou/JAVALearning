@@ -16,7 +16,7 @@ public class PredictProject {
         System.out.println("\n************\n");
         List<Person> personList = PersonRepository.getAllPersons();
         Predicate<Person> personHeight = (p) -> p.getHeight() >= 100;
-        personList.stream().filter(personHeight).collect(Collectors.toList());   // stream 的 filter 是要接受一个 Predicate 的
+        System.out.println(personList.stream().filter(personHeight).collect(Collectors.toList()));   // stream 的 filter 是要接受一个 Predicate 的
 
         System.out.println("\n************\n");
 
