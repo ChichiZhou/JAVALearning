@@ -11,8 +11,10 @@ public class InherintGeneric {
          *
          * 问题：默认的 toString 是怎么写的？
          */
-        Father<Integer> father = new Father<>(2);   // 利用泛型类生成对象的时候，必须在后面加上一个 <> ！！！！
-                                                          //  和生成 ArrayList 是同一个道理
+        Father<Integer> father = new Father<>(2);   // 利用泛型类生成对象的时候，必须在！！！！后面！！！！！加上一个 <> ！！！！
+                                                         // ！！！！！！生成的时候也需要在等号前面加上 <Integer> ！！！！！！！！！！
+                                                         // 目的是为了指明类型
+                                                         // 和生成 ArrayList 是同一个道理
         Father father1 = new Father<>(2);           // 自动推断类型
 
         System.out.println(father1);                     // 如果不写 toString 这个方法，则会返回一个内存位置，如 AdvancedSyntax.Father@61bbe9ba
