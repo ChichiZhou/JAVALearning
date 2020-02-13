@@ -56,6 +56,23 @@ public class Main {
          * 除去只出现一次的数！！！！！！
          */
         System.out.println(integerList.stream().filter(a->Collections.frequency(integerList, a)>1).collect(Collectors.toList()));
+        /**
+         * Java format 输出
+         */
+        System.out.println("**********************");
+        List<String> integerList2 = new ArrayList<>(Arrays.asList("1","2","3","4","1","1","1","1","1","2"));
+        integerList2.forEach(a-> System.out.println(a));
+        System.out.println("**********************");
+        System.out.println(integerList2.stream().map(a -> format("%d. %s%n", integerList2.indexOf(a), a)).collect(Collectors.joining()));
+        System.out.println("**********************");
+//        System.out.println(integerList2.stream().map(a -> format("%d. %s%n", integerList2., a)).collect(Collectors.toList()));
+
+        String string1 = "a";
+        String string2 = "b";
+        String string3 = "c";
+
+        System.out.println(string1.concat(string2).concat(string3));
+
 
 
     }
