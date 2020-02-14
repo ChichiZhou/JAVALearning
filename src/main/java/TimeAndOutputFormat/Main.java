@@ -14,6 +14,7 @@ import java.util.stream.Stream;
 
 import static java.lang.String.format;
 
+import com.google.common.base.Joiner;
 import sun.awt.image.ImageWatched;
 
 public class Main {
@@ -66,12 +67,20 @@ public class Main {
         System.out.println(integerList2.stream().map(a -> format("%d. %s%n", integerList2.indexOf(a), a)).collect(Collectors.joining()));
         System.out.println("**********************");
 //        System.out.println(integerList2.stream().map(a -> format("%d. %s%n", integerList2., a)).collect(Collectors.toList()));
-
         String string1 = "a";
         String string2 = "b";
         String string3 = "c";
 
         System.out.println(string1.concat(string2).concat(string3));
+        System.out.println("**********************");
+        Set<String> set = null;
+        System.out.println(format("This is %s" + " HELLO WORLD", set == null ? "yes" : "no"));
+        System.out.println("****************");
+        System.out.println(format("This is %s ".join(set == null ? " HELLO WORLD": "F**K WORLD" + " %s"), set == null ? "yes" : "no"));
+        System.out.println("**********************");
+        System.out.println(Joiner.on("").join(string1, string2, string3));
+        System.out.println("*******Something interesting*********");
+        System.out.println(Joiner.on("").join(string1, set == null ?string2: string3, string3));
 
 
 

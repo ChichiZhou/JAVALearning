@@ -12,10 +12,5 @@ public class Main {
         System.out.println("The return for name is " + monday.name());
 
         System.out.println("The class info for Day is "+ Day.class);
-
-        Set<String> set = null;
-        System.out.println(format("This is %s" + " HELLO WORLD", set == null ? "yes" : "no"));
-        System.out.println("****************");
-        System.out.println(format("This is %s ".join(set == null ? " HELLO WORLD": "F**K WORLD" + " %s"), set == null ? "yes" : "no"));
     }
 }
