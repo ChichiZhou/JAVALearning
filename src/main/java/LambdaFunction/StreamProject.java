@@ -22,6 +22,7 @@ public class StreamProject {
          * filter： 输入值是 predicate，返回值是 boolean
          * collect：输入值是想要collect到的容器，返回值是这个容器
          * forEach：输入值是一个 consumer，能够对这个容器中的所有对象进行操作!!!!!!!!!
+         * ifPresent?
          */
         Stream<Integer> stream = Stream.of(1,2,3,4,5);   // 创建 stream
         stream.forEach(a -> System.out.println(a));
