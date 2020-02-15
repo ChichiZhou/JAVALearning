@@ -2,13 +2,7 @@ package TimeAndOutputFormat;
 
 import java.text.SimpleDateFormat;
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Date;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -28,15 +22,20 @@ public class Main {
         System.out.println(Instant.now().toString());
         /**
          * 以下是关于 format 的使用
+         * 直接调用 format()，这里面有多个参数，使用 % 进行占位，然后在后面补上你需要的参数
          */
         System.out.println(format("Hi, My name is %s, my weight is %d kg", "时琳", 80));
         System.out.println(format("Hi, My age is %d", 30));
         /**
          * 在 format 中换行
+         * 可以使用 \n 或者 %n
          */
         System.out.println(format("Hi, My name is %s \nMy name is %s", "时琳", "周赤"));
+        System.out.println(format("Hi, My name is %s %nnMy name is %s", "时琳", "周赤"));
         /**
          * 统计一个 list 中某个元素出现的个数
+         * Collections 是一个类；
+         * Collection 是一个接口
          */
         List<String> integerList = new ArrayList<>(Arrays.asList("1","2","3","4","1","1","1","1","1","2"));
         System.out.println("The frequency for 1 is below");
@@ -54,7 +53,7 @@ public class Main {
 //        System.out.println(integerList);
         System.out.println("Remove all");
         /**
-         * 除去只出现一次的数！！！！！！
+         * 除去只出现一次的数！！！！！！ 这里使用 filter
          */
         System.out.println(integerList.stream().filter(a->Collections.frequency(integerList, a)>1).collect(Collectors.toList()));
         /**
@@ -77,11 +76,14 @@ public class Main {
         System.out.println(format("This is %s" + " HELLO WORLD", set == null ? "yes" : "no"));
         System.out.println("****************");
         System.out.println(format("This is %s ".join(set == null ? " HELLO WORLD": "F**K WORLD" + " %s"), set == null ? "yes" : "no"));
+        /**
+         * 使用 Guava 中的 Joiner 将字符串连接起来
+         */
+        System.out.println("*******Something interesting*********");
         System.out.println("**********************");
         System.out.println(Joiner.on("").join(string1, string2, string3));
-        System.out.println("*******Something interesting*********");
         System.out.println(Joiner.on("").join(string1, set == null ?string2: string3, string3));
-
+        System.out.println(Joiner.on("").join("我爱", "时琳", "一辈子"));
 
 
     }
