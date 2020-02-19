@@ -56,7 +56,9 @@ public class OptionalProject {
         Optional.of(resultList).ifPresent((element) -> System.out.println(element));
 
 //        System.out.println(resultList.isEmpty() ? {System.out.println("Empty")} : {System.out.println("No")});
-
+        System.out.println("****");
+        System.out.println(Optional.empty().toString());
+        System.out.println();
 
     }
 }

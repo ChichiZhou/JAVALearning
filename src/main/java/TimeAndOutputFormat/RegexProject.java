@@ -31,8 +31,5 @@ public class RegexProject {
             System.out.println(matcher.group(2));
         }
 
-
-
-
     }
 }
