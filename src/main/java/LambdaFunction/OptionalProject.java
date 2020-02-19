@@ -1,5 +1,7 @@
 package LambdaFunction;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 public class OptionalProject {
@@ -45,6 +47,15 @@ public class OptionalProject {
         System.out.println(Optional.ofNullable("0"));
         String salary = Optional.ofNullable("0").orElse("Nothing to show");
         System.out.println(salary);
+
+        /**
+         *
+         */
+        List<String> resultList = Collections.emptyList();
+
+        Optional.of(resultList).ifPresent((element) -> System.out.println(element));
+
+//        System.out.println(resultList.isEmpty() ? {System.out.println("Empty")} : {System.out.println("No")});
 
 
     }

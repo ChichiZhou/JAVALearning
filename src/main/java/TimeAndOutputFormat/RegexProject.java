@@ -10,10 +10,25 @@ public class RegexProject {
 //        Pattern.matches(r, "Operation Time:2020-02-14-T");
 //        if(r.matcher("Operation Time:2020-02-14-T")){};
 
-        if(Pattern.matches("Operation time \n" + timeformat, "Operation Time: \n2020-02-14T18:25:15.656Z\n\nSucceeded: 1 \nCounts: distinct = 1;deleted = 1\n\nCreated:\n1. ROTHWELL1\n\nDeleted:\n1. TEST_TAGSET\n")){
+//        if(Pattern.matches("Operation time \n" + timeformat, "Operation Time: \n2020-02-14T18:25:15.656Z\n\nSucceeded: 1 \nCounts: distinct = 1;deleted = 1\n\nCreated:\n1. ROTHWELL1\n\nDeleted:\n1. TEST_TAGSET\n")){
+//            System.out.println("true");
+//        } else{
+//            System.out.println("false");
+//        }
+
+
+        if(Pattern.matches(timeformat, "2020-02-14-T")){
             System.out.println("true");
-        } else{
-            System.out.println("false");
+        }
+
+        String mydata = "Operation Time:\n2020-02-18T22:38:14.192Z\n\nSucceeded: 1\nCounts: distinct = 1;deleted 1\n\nCreated: \n1. ROTHWELL1\nDeleted: \n1. TEST_TAGSET";
+        String test = "Operation Time:\n2020-02-18T22:54:41.932Z\n\nSucceeded: 1\nCounts: distinct = 1;deleted 0\n\nCreated: \n1. ROTHWELL1\nDeleted: Null";
+        Pattern pattern = Pattern.compile("(\\n)(.*)(\\n)");
+        Matcher matcher = pattern.matcher(test);
+        if (matcher.find())
+        {
+            System.out.println("true");
+            System.out.println(matcher.group(2));
         }
 
 
