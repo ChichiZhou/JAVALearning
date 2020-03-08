@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
+/**
+ * 需要再看一下关于 lambda 的概念，而不仅限于 lambda 的使用！！！！！！！
+ */
 public class CosumerProject {
     public static void main(String[] args) {
 

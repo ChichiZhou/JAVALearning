@@ -2,6 +2,9 @@ package CollectionsAndGeneric;
 
 import java.util.ArrayList;
 
+/**
+ * 这里还要再看一下 head first in java
+ */
 public class AnimalEat {
     ArrayList<Animal> animalList = new ArrayList<Animal>();
     ArrayList<Dog> dogList = new ArrayList<>();
@@ -16,7 +19,6 @@ public class AnimalEat {
 
 //        sameWithTakeAnimlas(dogList);  // 这么写是错的，对于容器中的泛型，不存在多态这个概念
         Animal newOne = new Dog();
-
 
     }
     public void go(){
@@ -46,7 +48,7 @@ public class AnimalEat {
      * 这种写法是一样的
      */
 
-    public void sameWithTakeAnimlas(ArrayList<? extends Animal> list){
+    public void sameWithTakeAnimlas(ArrayList<? extends Animal> list){      // 这里的问号表示通配符，意思是可以指代任何类
         for (Animal animal : list){
             animal.eat();
         }

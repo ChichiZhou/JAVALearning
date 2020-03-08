@@ -5,9 +5,7 @@ import java.time.Instant;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
 import static java.lang.String.format;
-
 import com.google.common.base.Joiner;
 import sun.awt.image.ImageWatched;
 
@@ -31,19 +29,41 @@ public class Main {
          * 可以使用 \n 或者 %n
          */
         System.out.println(format("Hi, My name is %s \nMy name is %s", "时琳", "周赤"));
-        System.out.println(format("Hi, My name is %s %nnMy name is %s", "时琳", "周赤"));
+        System.out.println(format("Hi, My name is %s %nMy name is %s", "时琳", "周赤"));
+        /**
+         * 利用 java 生成数组
+         * http://c.biancheng.net/view/5852.html
+         */
+        String[] testArray = new String[4]; //不行，一旦为数组的每个数组元素分配了内存空间，每个内存空间里存储的内容就是该数组元素的值，
+                                            // 即使这个内存空间存储的内容为空，这个空也是一个值（null）。不管以哪种方式来初始化数组，只要为数组元素分配了内存空间，数组元素就具有了初始值。
+                                            //初始值的获得有两种形式，一种由系统自动分配，另一种由程序员指定。
+        testArray[0] = "0";
+        testArray[1] = "1";
+        testArray[2] = "2";
+        testArray[3] = "3";
+
+        String[] testArray2 = new String[]{"cnlp", "xbb"};
+        System.out.println(Arrays.toString(testArray));
+        System.out.println(format("The new method for array is %s", Arrays.toString(testArray2)));
+        // 数组是没有 foreach 的，只有 list 有 foreach
+        for (String string : testArray2){
+            System.out.println(string);
+        }
+
+
         /**
          * 统计一个 list 中某个元素出现的个数
          * Collections 是一个类；
          * Collection 是一个接口
          */
-        List<String> integerList = new ArrayList<>(Arrays.asList("1","2","3","4","1","1","1","1","1","2"));
+        List<String> integerList = new ArrayList<>(Arrays.asList("1","2","3","4","1","1","1","1","1","2")); // Arrays.asList 也可以用作
+        List<String> stringList = new ArrayList<>(Arrays.asList(testArray2));    // ArrayList 这里就是一个泛型了。但是我还是忘了泛型的东西，需要一会看一看
         System.out.println("The frequency for 1 is below");
-        System.out.println(Collections.frequency(integerList, 1));
+        System.out.println(Collections.frequency(integerList, 1));   // 这里必须是继承 Collection 接口的的才能这么做.
         Set<String> integerSet = new LinkedHashSet<>(integerList);
         integerSet.stream().forEach(key -> Collections.frequency(integerList, key));
 
-        System.out.println(integerSet.stream().collect(Collectors.toMap((a)->a.toString(), a -> Collections.frequency(integerList, a))));
+        System.out.println(integerSet.stream().collect(Collectors.toMap((a)->a.toString(), a -> Collections.frequency(integerList, a))));  // 要想得到一个东西，就必须要使用 stream.collect()
 
         System.out.println(integerSet);
         System.out.println(integerList);

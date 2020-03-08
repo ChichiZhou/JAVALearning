@@ -15,6 +15,7 @@ public class InherintGeneric {
                                                          // ！！！！！！生成的时候也需要在等号前面加上 <Integer> ！！！！！！！！！！
                                                          // 目的是为了指明类型
                                                          // 和生成 ArrayList 是同一个道理
+
         Father father1 = new Father<>(2);           // 自动推断类型
 
         System.out.println(father1);                     // 如果不写 toString 这个方法，则会返回一个内存位置，如 AdvancedSyntax.Father@61bbe9ba
