@@ -7,6 +7,7 @@ public class RegexProject {
     public static void main(String[] args) {
         String timeformat = "([0-9]{4})-(0?[1-9]|1[012]})-(0?[1-9]|[12][0-9]|3[01])T([01]?[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]\\.[0-9]+Z";
         Pattern r = Pattern.compile("([0-9]{4})-(0?[1-9]|1[012]})-(0?[1-9]|[12][0-9]|3[01])T([01]?[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]");
+
 //        Pattern.matches(r, "Operation Time:2020-02-14-T");
 //        if(r.matcher("Operation Time:2020-02-14-T")){};
 
@@ -17,18 +18,20 @@ public class RegexProject {
 //        }
 
 
-        if(Pattern.matches(timeformat, "2020-02-14-T")){
+        if(Pattern.matches(timeformat, "2020-02-18T22:38:14.192Z")){
             System.out.println("true");
         }
 
         String mydata = "Operation Time:\n2020-02-18T22:38:14.192Z\n\nSucceeded: 1\nCounts: distinct = 1;deleted 1\n\nCreated: \n1. ROTHWELL1\nDeleted: \n1. TEST_TAGSET";
         String test = "Operation Time:\n2020-02-18T22:54:41.932Z\n\nSucceeded: 1\nCounts: distinct = 1;deleted 0\n\nCreated: \n1. ROTHWELL1\nDeleted: Null";
-        Pattern pattern = Pattern.compile("(\\n)(.*)(\\n)");
+//        Pattern pattern = Pattern.compile("(\\n)(.*)(\\n)");
+        Pattern pattern = Pattern.compile(timeformat);
         Matcher matcher = pattern.matcher(test);
+
         if (matcher.find())
         {
             System.out.println("true");
-            System.out.println(matcher.group(2));
+            System.out.println(matcher.group());
         }
 
     }
