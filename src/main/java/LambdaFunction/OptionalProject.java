@@ -1,8 +1,13 @@
 package LambdaFunction;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+import com.google.common.base.Joiner;
 
 public class OptionalProject {
     public static void main(String[] args) {
@@ -24,6 +29,7 @@ public class OptionalProject {
         String name = "Joe";
         System.out.println(Optional.ofNullable(null));      // 这里返回的是 Optional.empty
         System.out.println(Optional.ofNullable("Joe"));     // 这里返回的是 Optional[Joe]
+        System.out.println(Optional.ofNullable(null).toString());
         System.out.println("\n************\n");
 
         Optional<String> optName = Optional.of(name);     // Optional.of() 里面只能放不是 null 的变量
@@ -59,6 +65,25 @@ public class OptionalProject {
         System.out.println("****");
         System.out.println(Optional.empty().toString());
         System.out.println();
+
+        /**
+         * Use Optional for set
+         */
+
+        Set<String> testSet = new HashSet<>();
+        testSet.add("1");
+        Set<Optional>newTestSet = testSet.stream().map(memeber -> Optional.ofNullable(memeber)).collect(Collectors.toSet());
+
+        String country = Joiner.on("_").join(newTestSet);
+
+        System.out.println(country);
+
+        /**
+         * Optional.ifPresent()
+         */
+
+
+
 
     }
 }
