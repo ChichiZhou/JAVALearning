@@ -1,6 +1,13 @@
 package LambdaFunction;
 
+
 import java.util.*;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import com.google.common.base.Joiner;
@@ -62,8 +69,14 @@ public class OptionalProject {
          *
          */
         List<String> resultList = Collections.emptyList();
-
+        System.out.println("The result of ifPresent");
         Optional.of(resultList).ifPresent((element) -> System.out.println(element));
+        List<String> resultList2 = Arrays.asList("one", "two");
+        System.out.println("Another result of ifPresent");
+        /**
+         * ifPresent 是根据前面的哪个值来确定是否需要执行其中的 consumer 的
+         */
+        Optional.of(resultList2).ifPresent((element) -> System.out.println(element));
 
 //        System.out.println(resultList.isEmpty() ? {System.out.println("Empty")} : {System.out.println("No")});
         System.out.println("****");
