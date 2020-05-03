@@ -1,7 +1,12 @@
 package CollectionsAndGeneric;
 
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.*;
 
+@Slf4j
 public class AddaList {
     /**
      * 有返回值
@@ -25,6 +30,50 @@ public class AddaList {
         while(collectionIterator.hasNext()){
             System.out.println(collectionIterator.next());
         }
+
+        List<String> newList = new LinkedList<>(Arrays.asList("a"));
+        List<String> finalList = new LinkedList<>(Arrays.asList("b"));
+
+        newList = finalList;
+        System.out.println(newList);
+
+        List<Integer> testOne = new LinkedList<>();
+        List<Integer> testTwo = new LinkedList<>(Arrays.asList(1,2,3,4,5));
+
+        for(Integer element: testTwo){
+            testOne.add(addElement(element));
+        }
+
+        System.out.println(testOne);
+
+        List<String> testImmutable = ImmutableList.of("1", "2", "3");
+
+        Map<String, String> testEmpty = new LinkedHashMap<>();
+
+        System.out.println(testEmpty);
+
+        /**
+         * 分割 List
+         */
+
+        List<Integer> testThree = new LinkedList<>(Arrays.asList(1,2,3,4,5));
+
+        List<List<Integer>> newTestThree = Lists.partition(testThree, 2);
+
+//        log.debug("The divide list is {}",newTestThree);
+        System.out.println(newTestThree);
+
+
+    }
+
+    public static Integer addElement(Integer testTwo){
+
+            if(testTwo == 1){
+                return null;
+            } else {
+                return testTwo;
+            }
+
     }
 
 

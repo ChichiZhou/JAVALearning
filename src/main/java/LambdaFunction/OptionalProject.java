@@ -1,13 +1,14 @@
 package LambdaFunction;
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import com.google.common.base.Joiner;
+import com.google.common.collect.ImmutableList;
+
+import javax.management.ImmutableDescriptor;
+
+import static java.lang.String.format;
 
 public class OptionalProject {
     public static void main(String[] args) {
@@ -53,6 +54,9 @@ public class OptionalProject {
         System.out.println(Optional.ofNullable("0"));
         String salary = Optional.ofNullable("0").orElse("Nothing to show");
         System.out.println(salary);
+        List<String> testList = new LinkedList<>();
+        Optional<String> result = testList.stream().filter(p->p!=null).findFirst();
+        System.out.println(format("The result is %s", result.orElse(null)));
 
         /**
          *
@@ -82,7 +86,18 @@ public class OptionalProject {
          * Optional.ifPresent()
          */
 
+        Set<String> testMapOptional = new LinkedHashSet<>();
+        testMapOptional.add("UNKNOWN");
+        String countryTest = Joiner.on("_").join(testMapOptional.stream().filter(p->!p.equals("UNKNOWN")).map(Optional::of).collect(Collectors.toList()));
+        System.out.println(format("******** HELLO THERE %s", countryTest));
+        System.out.println(countryTest.length());
 
+        List<String> tags = ImmutableList.of();
+        Optional<List<String>> tagsList = Optional.ofNullable(tags);
+
+        if(tagsList.isPresent()){
+            System.out.println(tagsList.get());
+        }
 
 
     }

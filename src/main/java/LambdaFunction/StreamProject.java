@@ -1,6 +1,7 @@
 package LambdaFunction;
 
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -50,7 +51,11 @@ public class StreamProject {
         Stream.of(PersonRepository.getAllPersons()).forEach(per -> System.out.println(per.get(0).getName())); // 这么写也是可以的
 
 
+        List<String> testRemoveIf = new LinkedList<>(Arrays.asList("1","2","3","4","5","6","7"));
 
+        testRemoveIf.removeIf(p-> {return (p.equals("1"));});
+
+        System.out.println(testRemoveIf);
 
 
 

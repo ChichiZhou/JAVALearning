@@ -2,10 +2,7 @@ package MapOperation;
 
 import static java.lang.String.format;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableMap;
@@ -67,5 +64,16 @@ public class testScript {
         Map<String, String> empty = new HashMap<>();
         System.out.println(empty.keySet());
         System.out.println(empty.isEmpty());
+
+        Map<String, Set<String>> testJoinSet = new LinkedHashMap<>();
+        String country = "CN";
+        Set<String> warehouse = new LinkedHashSet<>();
+        warehouse.add("BJ1");
+        warehouse.add("BJ2");
+        testJoinSet.put(country, warehouse);
+
+        String warehouseResult = Joiner.on("_").join(testJoinSet.get("CN"));
+
+        System.out.println(warehouseResult);
     }
 }

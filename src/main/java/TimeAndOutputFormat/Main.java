@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import static java.lang.String.format;
 import com.google.common.base.Joiner;
+import com.google.common.base.Splitter;
 import sun.awt.image.ImageWatched;
 
 public class Main {
@@ -105,6 +106,35 @@ public class Main {
         System.out.println(Joiner.on("").join(string1, set == null ?string2: string3, string3));
         System.out.println(Joiner.on("").join("我爱", "时琳", "一辈子"));
 
+        String testSplit = "IT_DE";
+        List<String> splitresult = Splitter.on('_').splitToList("IT");
+        List<String> secondSplitResult = Splitter.on('_').splitToList(testSplit);
+        System.out.println(splitresult);
+        System.out.println(secondSplitResult);
+
+        List<String> s3 = new ArrayList<>();
+        List<String> one = Arrays.asList("1");
+
+        System.out.println(format("The result of disjoint is %s", Collections.disjoint(one, s3)));
+
+        Collection<String> testCollection = null;
+
+        System.out.println(testCollection);
+
+        Set<String> testCountry = new LinkedHashSet<>();
+        testCountry.add("A");
+        String country = Joiner.on("_").join(testCountry.stream().filter(p->!p.equals("A")).collect(Collectors.toList()));
+
+        System.out.println(country);
+
+
+        Set<String> testSet = new LinkedHashSet<>();
+        testSet.add(null);
+        if(testSet.remove(null) && testSet.isEmpty()){
+            System.out.println("empty");
+        } else{
+            System.out.println("no empty");
+        }
 
     }
 }
