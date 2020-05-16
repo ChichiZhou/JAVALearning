@@ -22,7 +22,7 @@ public class RegexProject {
             System.out.println("true");
         }
 
-        String mydata = "Operation Time:\n2020-02-18T22:38:14.192Z\n\nSucceeded: 1\nCounts: distinct = 1;deleted 1\n\nCreated: \n1. ROTHWELL1\nDeleted: \n1. TEST_TAGSET";
+//        String mydata = "Operation Time:\n2020-02-18T22:38:14.192Z\n\nSucceeded: 1\nCounts: distinct = 1;deleted 1\n\nCreated: \n1. ROTHWELL1\nDeleted: \n1. TEST_TAGSET";
         String test = "Operation Time:\n2020-02-18T22:54:41.932Z\n\nSucceeded: 1\nCounts: distinct = 1;deleted 0\n\nCreated: \n1. ROTHWELL1\nDeleted: Null";
 //        Pattern pattern = Pattern.compile("(\\n)(.*)(\\n)");
         Pattern pattern = Pattern.compile(timeformat);
@@ -33,6 +33,19 @@ public class RegexProject {
             System.out.println("true");
             System.out.println(matcher.group());
         }
+
+//        String warehouse = "([A-Z]{3}|[A-Z]{4})([0-9]){1}";
+//        String warehouse = "([A-Z]*[0-9]*)/([A-Z]*[0-9]*)/([0-9]{4})-(0?[1-9]|1[0-2]})-([0-9][0-9])";
+        String warehouse = "([A-Z]*[0-9]*)/([A-Z]*[0-9]*)/([0-9]{4})-(0?[1-9]|1[0-2])-(0?[1-9]|[12][0-9]|3[01])/.*";
+        Pattern warehousePattern = Pattern.compile(warehouse);
+
+        String testWarehouse = "MPRX5/NT/2020-11-13/jjjjj.json";
+
+//        Matcher matcher1 = pattern.matcher(testWarehouse);
+//
+//        System.out.println(matcher1.group());
+
+        System.out.println(Pattern.matches(warehouse, testWarehouse));
 
     }
 }

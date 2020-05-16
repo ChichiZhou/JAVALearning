@@ -2,10 +2,7 @@ package MapOperation;
 
 import static java.lang.String.format;
 
-import java.util.HashMap;
-import java.util.LinkedHashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class GetKeysInMap {
     public static void getKeys(Map<String, String> testMap){
@@ -16,8 +13,4 @@ public class GetKeysInMap {
 
         }
     }
-
-
-
-
 }

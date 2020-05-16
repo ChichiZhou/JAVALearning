@@ -26,18 +26,25 @@ public class Main {
 //                }
 //            }
 //        }
-        try {
-            throw new AssertionError();
-        } catch (Error e) {
-            System.out.println("CATCH ERROR HERE!!!");
-            // caught! -> test pass
-        }
+//        try {
+//            throw new AssertionError();
+//        } catch (Error e) {
+//            System.out.println("CATCH ERROR HERE!!!");
+//            // caught! -> test pass
+//        }
+//
+//        try {
+//            throw new NullPointerException();
+//        } catch (IllegalStateException e) {
+//            System.out.println("抛出 IllegalStateException");
+//            // caught! -> test pass
+//        }
 
         try {
-            throw new NullPointerException();
-        } catch (IllegalStateException e) {
-            System.out.println("抛出 IllegalStateException");
-            // caught! -> test pass
+            throw new InterruptedException();
+        } catch (Exception e) {
+            e.getClass();
+            System.out.println(e.getClass());
         }
 
 

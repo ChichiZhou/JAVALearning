@@ -112,6 +112,24 @@ public class OptionalProject {
             System.out.println(tagsList.get());
         }
 
+        /**
+         * test null
+         */
+        String prefix = "fff";
+        String testNull = prefix == null? "There is null before": prefix + "There is null before";
+        System.out.println(testNull);
+
+        /**
+         * Test ifPresent()
+         */
+
+        List<String> testIfPresentList = new LinkedList<>();
+        //Optional<String> testIfPresent = Optional.of("TEST IFPRESENT");
+        Optional<String> testIfPresent = Optional.empty();
+        testIfPresent.ifPresent(p->testIfPresentList.add(p));
+
+        System.out.println("Test ifPresent()");
+        System.out.println(testIfPresentList);
 
     }
 }

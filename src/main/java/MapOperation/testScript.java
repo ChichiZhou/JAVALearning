@@ -14,6 +14,17 @@ public class testScript {
         Map<String, String> test = ImmutableMap.of("A", "a");
         System.out.println(test);
         t.JoinTogether(test);
+
+        System.out.println("******************");
+
+        Set<String> testSet = new HashSet<>();
+        testSet.add("1");
+        testSet.add(null);
+        testSet.add(null);
+        testSet.add(null);
+        testSet.add("2");
+
+        System.out.println(testSet);
     }
 
     public void createMap(){

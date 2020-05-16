@@ -130,6 +130,8 @@ public class Main {
 
         Set<String> testSet = new LinkedHashSet<>();
         testSet.add(null);
+        System.out.println("If the Set add Null, what will happened?????");
+        System.out.println(testSet);
         if(testSet.remove(null) && testSet.isEmpty()){
             System.out.println("empty");
         } else{
