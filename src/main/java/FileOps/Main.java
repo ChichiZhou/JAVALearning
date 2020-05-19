@@ -37,8 +37,7 @@ public class Main {
             line= charBufferReader.readLine();
         }
 
-
-
-
+        // 不适用 Buffer， 直接使用 line
+        charSource.lines().forEach(p-> System.out.println(p));
     }
 }
