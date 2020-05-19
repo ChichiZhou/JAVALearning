@@ -47,6 +47,9 @@ public class RegexProject {
 //
 //        System.out.println(matcher1.group());
 
+        // [] 中括号表示一个字符集
+        // () 括号表示一个整体，这个整体会在匹配中体现 https://blog.csdn.net/u010552788/article/details/51019367
+
         System.out.println(Pattern.matches(warehouse, testWarehouse));
 
         String filter = "(^OPC$)|(com.hezho)";
