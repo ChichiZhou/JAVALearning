@@ -34,7 +34,15 @@ public class Main {
 
         TestCombine testCombine2 = TestCombine.create("hezho");
         // 如果要用 toBuilder，一定要有一个具体的对象才行
-        TestCombine.TestCombineBuilder testCombineBuilder2 = testCombine2.toBuilder();
+//        TestCombine.TestCombineBuilder testCombineBuilder2 = testCombine2.toBuilder();
+        TestCombine.TestCombineBuilder testCombineBuilder1 = TestCombine.testCombineBuilder();
+        TestCombine testCombine3 = testCombineBuilder1.name("hezho").build();
+        System.out.println(testCombine3.getName());
+
+        // 也可以直接用静态方法生成。
+        TestCombine testCombine4 = TestCombine.create2("shilin");
+
+
 
     }
 }
