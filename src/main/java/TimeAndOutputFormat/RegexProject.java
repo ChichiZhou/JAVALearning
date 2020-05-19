@@ -3,6 +3,8 @@ package TimeAndOutputFormat;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static java.lang.String.format;
+
 public class RegexProject {
     public static void main(String[] args) {
         String timeformat = "([0-9]{4})-(0?[1-9]|1[012]})-(0?[1-9]|[12][0-9]|3[01])T([01]?[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]\\.[0-9]+Z";
@@ -47,5 +49,17 @@ public class RegexProject {
 
         System.out.println(Pattern.matches(warehouse, testWarehouse));
 
+        String filter = "(^OPC$)|(com.hezho)";
+        Pattern filterPattern = Pattern.compile(filter);
+        String testFilter1 = "com.hezho";
+        String testFilter2 = "OPC";
+
+        System.out.println(format("The result of testFilter1 is %s", Pattern.matches(filter, testFilter1)));
+        System.out.println(format("The result of testFilter2 is %s", Pattern.matches(filter, testFilter2)));
+
+        String filter2 = "( - ([A-Z]+[-_A-Z0-9]*))";
+        String testFilter21 = " - UDP_MAP";
+
+        System.out.println(format("The result of testFilter1 is %s", Pattern.matches(filter2, testFilter21)));
     }
 }
