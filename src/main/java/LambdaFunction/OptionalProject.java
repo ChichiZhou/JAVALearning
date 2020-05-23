@@ -12,6 +12,8 @@ import java.util.stream.Collectors;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import lombok.NonNull;
 
 import javax.management.ImmutableDescriptor;
 
@@ -131,5 +133,16 @@ public class OptionalProject {
         System.out.println("Test ifPresent()");
         System.out.println(testIfPresentList);
 
+
+        Optional.empty().map(p->p.toString());
+
+        ImmutableMap<String, String> properites = ImmutableMap.of();
+        System.out.println(properites);
+        System.out.println(OptionalProject.isEnabled(properites));
+
+    }
+
+    public static boolean isEnabled(@NonNull final ImmutableMap<String, String> properites){
+        return true;
     }
 }

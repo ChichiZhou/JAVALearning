@@ -63,6 +63,18 @@ public class AddaList {
 //        log.debug("The divide list is {}",newTestThree);
         System.out.println(newTestThree);
 
+        System.out.println("********* Use ImmutableList copyOf ***********");
+
+        List<String> testCopy1 = ImmutableList.of("1", "2");
+
+        List<String> testCopy2 = ImmutableList.of("3", "4");
+
+        List<String> result1 = new ArrayList<>(testCopy1);
+        result1.addAll(testCopy2);
+
+        System.out.println(result1);
+
+
 
     }
 
