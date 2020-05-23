@@ -7,6 +7,8 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 import java.util.Arrays;
+import java.util.Map;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 public enum Day {
@@ -30,12 +32,12 @@ public enum Day {
 
     abstract String getPeriod();
 
-//    private static final ImmutableMap<String, Day> BY_TYPE =
-//            Maps.uniqueIndex(Arrays.stream(Day.values().), Day::getType);
+    @SuppressWarnings("ConstantConditions")
+    static Map<String, Day> BY_TYPE =
+        Maps.uniqueIndex(Arrays.stream(Day.values()).iterator(), Enum::name);
 
-//    private static final String BY_TYPE = Day.getType();
+    static Optional<Day> get(String type){
+        return Optional.ofNullable(BY_TYPE.get(type));
+    }
 
-//    public String toString(){             // 如果重载 toString，则 toString 会默认调用 name，返回值是这个 enum 的名字
-//        return defaultLocalizedText;
-//    }
 }

@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableList;
@@ -61,7 +62,8 @@ public class OptionalProject {
          */
         System.out.println(Optional.ofNullable("0").orElse("Nothing to show"));
         System.out.println(Optional.ofNullable("0"));
-        String salary = Optional.ofNullable("0").orElse("Nothing to show");
+        String salary = Optional.ofNullable("0").orElse("Nothing to show");     // orElse 会返回一个和 Optional<T> 中 T 同一个类型的变量
+        String salary1 = Optional.ofNullable("0").get();
         System.out.println(salary);
         List<String> testList = new LinkedList<>();
         Optional<String> result = testList.stream().filter(p->p!=null).findFirst();
@@ -139,6 +141,19 @@ public class OptionalProject {
         ImmutableMap<String, String> properites = ImmutableMap.of();
         System.out.println(properites);
         System.out.println(OptionalProject.isEnabled(properites));
+
+        Optional<String> testStream = Optional.of("XBBSB");
+        // 无法用 testStream.stream() 所以只能根据 Stream.of() 来生成
+        Stream.of(testStream).forEach(p-> System.out.println(p.get()));
+
+        // 使用 flatMap
+        // flatMap 的作用是把不在一个维度的变量放到一个维度
+        // https://blog.csdn.net/Hatsune_Miku_/article/details/73435618
+        String[][] data = new String[][]{{"a", "b"}, {"c", "d"}, {"e", "f"}};
+        Stream.of(data).flatMap(Arrays::stream).forEach(System.out::println);
+
+
+
 
     }
 
