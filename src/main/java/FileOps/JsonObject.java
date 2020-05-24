@@ -17,8 +17,22 @@ public class JsonObject {
         List<String> testList = new ArrayList<>();
         testList.add("ShinLin");
         testList.add("HEZHO");
+        // 可以直接将 List 放入到 JSONObject 中
         jsonObject.put("husbandAndWife", testList);
+        System.out.println("Without indentFactor");
         System.out.println(jsonObject.toString());
+        System.out.println("Use indentFactor");
+        System.out.println(jsonObject.toString(2));
+
+        // 在 JSONObject 中也可以放 JSONObject
+        JSONObject jsonObject1 = new JSONObject();
+        jsonObject1.put("school", "CUPB");
+        jsonObject.put("degree", jsonObject1);
+
+        // 获得 JSONObjet
+        JSONObject jsonObject2 = jsonObject.getJSONObject("degree");
+        System.out.println("The JSONObject is");
+        System.out.println(jsonObject2);
 
         // 利用 Map 生成 JSONArray
         Map<String, String> mapJson = new LinkedHashMap<>();
@@ -27,7 +41,6 @@ public class JsonObject {
 
         JSONObject mapJsonTest = new JSONObject(mapJson);
         System.out.println(mapJsonTest.toString());
-
 
         // 将 jsonObject 输出到文件中
         String jsonString = jsonObject.toString();

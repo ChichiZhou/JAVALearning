@@ -16,7 +16,7 @@ public class GsonTest {
         // 或者将 object 转换成 json
         Person person = new Person("Shilin", 18, "HEZHO");
         Gson gson = new Gson();
-        // 转换成 json
+        // 转换成 json，使用了 toJson
         String personString = gson.toJson(person);
         System.out.println(personString);
         // 写入到 file 中的步骤跟 JsonObject 中写入的步骤一致
