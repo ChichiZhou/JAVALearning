@@ -1,0 +1,78 @@
+package FileOps;
+import org.apache.commons.io.FileUtils;
+import org.json.*;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+public class JsonObject {
+    public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException, IOException {
+        // 直接利用 jsonObject 生成一个json 文件
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("name", "Shilin");
+        jsonObject.put("age", 19);
+        List<String> testList = new ArrayList<>();
+        testList.add("ShinLin");
+        testList.add("HEZHO");
+        jsonObject.put("husbandAndWife", testList);
+        System.out.println(jsonObject.toString());
+
+        // 利用 Map 生成 JSONArray
+        Map<String, String> mapJson = new LinkedHashMap<>();
+        mapJson.put("Name", "Shilin");
+        mapJson.put("Husband", "HEZHO");
+
+        JSONObject mapJsonTest = new JSONObject(mapJson);
+        System.out.println(mapJsonTest.toString());
+
+
+        // 将 jsonObject 输出到文件中
+        String jsonString = jsonObject.toString();
+        File jsonFile = new File("src/main/resources/jsonFile.json");
+        if(jsonFile.exists()) {
+            jsonFile.delete();
+        } else {
+            Writer write = new OutputStreamWriter(new FileOutputStream(jsonFile), "UTF-8");
+            write.write(jsonString);
+            write.flush();
+            write.close();
+        }
+
+        // 读取某个json中的文件
+        File readJsonFile = new File("src/main/resources/readJsonFile.json");
+        String content = FileUtils.readFileToString(readJsonFile);  // 直接把 file 的内容转变成字符串
+        System.out.println("The json content is ");
+        System.out.println(content);
+        JSONObject readJson = new JSONObject(content);
+        System.out.println(readJson.getString("sex"));
+        System.out.println(readJson.getString("name"));
+        System.out.println(readJson.getInt("age"));
+
+        JSONArray hobbies = readJson.getJSONArray("hobbies");
+        System.out.println("The JSONArray is");
+        System.out.println(hobbies);
+
+        // 一种写法
+        List<String> readJsonList = new ArrayList<>();
+        for(Object element : hobbies){
+            readJsonList.add((String)element);
+        }
+        System.out.println("The List of JSONArray is");
+        System.out.println(readJsonList);
+
+        // 另外一种写法
+        List<String> readJsonList2 = new ArrayList<>();
+        for(int i = 0; i < hobbies.length(); i++){
+            readJsonList2.add(hobbies.getString(i));
+        }
+
+        System.out.println("The List of JSONArray2 is");
+        System.out.println(readJsonList2);
+
+
+
+    }
+}

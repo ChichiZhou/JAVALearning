@@ -8,6 +8,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        // 用来快速创建一个 Map
         List<String> list = Lists.newArrayList("A","BA");
         ImmutableMap<Integer, String> uniqueIndex = Maps.uniqueIndex(list, String -> String.length());
         System.out.println(uniqueIndex.keySet());

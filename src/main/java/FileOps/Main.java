@@ -28,7 +28,6 @@ public class Main {
         // 如何把文件中的内容重新组合生成一个 String
 
         // 使用 CharSource
-
         CharSource charSource = Files.asCharSource(new File(filePath2), Charsets.UTF_8);
         BufferedReader charBufferReader = charSource.openBufferedStream();
         String line = charBufferReader.readLine();
