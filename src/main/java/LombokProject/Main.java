@@ -40,9 +40,7 @@ public class Main {
         System.out.println(testCombine3.getName());
 
         // 也可以直接用静态方法生成。
-        TestCombine testCombine4 = TestCombine.create2("shilin");
-
-
+        TestCombine testCombine4 = TestCombine.create2();
 
     }
 }

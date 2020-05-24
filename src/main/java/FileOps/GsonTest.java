@@ -29,8 +29,6 @@ public class GsonTest {
         System.out.println(readGsonPerson.getName());
         System.out.println(readGsonPerson.getAge());
         System.out.println(readGsonPerson.getHusband());
-
-
     }
 
     @Data
