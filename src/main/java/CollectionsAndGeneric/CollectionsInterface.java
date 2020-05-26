@@ -6,7 +6,7 @@ import java.util.Collection;
 public class CollectionsInterface {
     public static void main(String[] args) {
         /**
-         * 这里注意，Collections 和 Map 都是接口！！！！
+         * 这里注意，Collections 和 MapAndFlatMap 都是接口！！！！
          *
          * http://www.51gjie.com/java/639.html
          */

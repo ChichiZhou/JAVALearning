@@ -10,6 +10,7 @@ import java.util.Map;
 
 public class JsonObject {
     public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException, IOException {
+        // https://blog.csdn.net/u014260748/article/details/41521123
         // 直接利用 jsonObject 生成一个json 文件
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("name", "Shilin");
@@ -34,7 +35,7 @@ public class JsonObject {
         System.out.println("The JSONObject is");
         System.out.println(jsonObject2);
 
-        // 利用 Map 生成 JSONArray
+        // 利用 MapAndFlatMap 生成 JSONArray
         Map<String, String> mapJson = new LinkedHashMap<>();
         mapJson.put("Name", "Shilin");
         mapJson.put("Husband", "HEZHO");
