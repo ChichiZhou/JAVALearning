@@ -42,6 +42,8 @@ public class Main {
         // 也可以直接用静态方法生成。
         TestCombine testCombine4 = TestCombine.create2();
 
+
+
     }
 }
 
