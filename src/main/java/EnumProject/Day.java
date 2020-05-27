@@ -34,7 +34,7 @@ public enum Day {
 
     @SuppressWarnings("ConstantConditions")
     static Map<String, Day> BY_TYPE =
-        Maps.uniqueIndex(Arrays.stream(Day.values()).iterator(), Enum::name);
+        Maps.uniqueIndex(Arrays.stream(Day.values()).iterator(), Enum::name);  // Enum 自身就带 name
 
     static Optional<Day> get(String type){
         return Optional.ofNullable(BY_TYPE.get(type));

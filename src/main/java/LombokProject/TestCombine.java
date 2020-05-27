@@ -16,11 +16,16 @@ public class TestCombine {
     // 设置不同的 builder 就是为了设置不同的构造方法。同一个class 可以有很多构造方法
     @lombok.Builder(builderClassName = "TestCombineBuilder", builderMethodName = "testCombineBuilder")
     public static TestCombine create(@NonNull String name){
-        return new TestCombine(name);
+        return new TestCombine(name + "HEZHO");
     }
 
     @lombok.Builder(builderClassName = "TestCombineBuilder2", builderMethodName = "testCombineBuilder2")
     public static TestCombine create2(){
         return new TestCombine("Shillin");
+    }
+
+    @lombok.Builder(builderClassName = "TestCombineBuilder3", builderMethodName = "testCombineBuilder3", toBuilder = true)
+    public static TestCombine create3(){
+        return new TestCombine("HEZHO");
     }
 }

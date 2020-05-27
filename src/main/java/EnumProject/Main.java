@@ -43,7 +43,7 @@ public class Main {
         Optional<Day> dayTest2 = Day.get("Friday");
 
         //System.out.println(dayTest2.get());               // 这里由于 dayTest 可能是Optional.empty()， 所以这里的 get() 可能会抛出异常
-        System.out.println(dayTest2.orElse(Day.Tuesday)); // 这里用 orElse 只能返回一个 Day 类型的元素
+        System.out.println(dayTest2.orElse(Day.Tuesday));   // 这里用 orElse 只能返回一个 Day 类型的元素
 
         System.out.println(dayTest2.isPresent()? dayTest2.get().getPeriod(): "0");
 
