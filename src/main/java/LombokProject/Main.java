@@ -2,6 +2,10 @@ package LombokProject;
 
 public class Main {
     public static void main(String[] args) {
+        // 使用 builder 的目的是创建一个中间类，可以在这个中间类中写别的方法
+        // 而且这个中间类中可以放
+
+        // https://juejin.im/post/5c2088205188251920598d85
         /**
          * Only use RequiredArgsConstructor
          */
@@ -34,13 +38,15 @@ public class Main {
 
         TestCombine testCombine2 = TestCombine.create("hezho");
         // 如果要用 toBuilder，一定要有一个具体的对象才行
-//        TestCombine.TestCombineBuilder testCombineBuilder2 = testCombine2.toBuilder();
+        TestCombine.TestCombineBuilder3 testCombineBuilder2 = testCombine2.toBuilder();
+
         TestCombine.TestCombineBuilder testCombineBuilder1 = TestCombine.testCombineBuilder();
         TestCombine testCombine3 = testCombineBuilder1.name("hezho").build();
         System.out.println(testCombine3.getName());
 
         // 也可以直接用静态方法生成。
         TestCombine testCombine4 = TestCombine.create2();
+
 
 
 
