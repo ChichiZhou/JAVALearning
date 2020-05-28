@@ -41,7 +41,8 @@ public class Main {
         TestCombine.TestCombineBuilder3 testCombineBuilder2 = testCombine2.toBuilder();
 
         TestCombine.TestCombineBuilder testCombineBuilder1 = TestCombine.testCombineBuilder();
-        TestCombine testCombine3 = testCombineBuilder1.name("hezho").build();
+
+        TestCombine testCombine3 = testCombineBuilder1.inputValue("hezho").build();  // 区别在这里，这里的 inputValue 是 create 的参数
         System.out.println(testCombine3.getName());
 
         // 也可以直接用静态方法生成。

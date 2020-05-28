@@ -49,6 +49,9 @@ public class JsonObject {
         if(jsonFile.exists()) {
             jsonFile.delete();
         } else {
+            // 生成一个 Writer
+            // 要想把某些内容写入到 Json 中，必须涉及到
+            // Writer, OutputStreamWriter, FileOutputStream
             Writer write = new OutputStreamWriter(new FileOutputStream(jsonFile), "UTF-8");
             write.write(jsonString);
             write.flush();
