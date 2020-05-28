@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>CollectionsAndGeneric</OriginalElement>
+  <nodes>
+    <node x="230.4722222222222" y="0.0">CollectionsAndGeneric.Song</node>
+    <node x="274.6875" y="432.0">CollectionsAndGeneric.HeadFirstProject</node>
+    <node x="198.6142857142857" y="528.0">CollectionsAndGeneric.Animal</node>
+    <node x="6.314285714285688" y="730.0">CollectionsAndGeneric.AnimalEat</node>
+    <node x="0.0" y="254.0">CollectionsAndGeneric.Jukebox</node>
+    <node x="146.0" y="629.0">CollectionsAndGeneric.Cat</node>
+    <node x="483.3142857142857" y="528.0">CollectionsAndGeneric.AddaList</node>
+    <node x="769.3142857142857" y="528.0">CollectionsAndGeneric.AddSet</node>
+    <node x="0.0" y="629.0">CollectionsAndGeneric.Dog</node>
+    <node x="0.0" y="1003.0">CollectionsAndGeneric.CollectionsTest</node>
+    <node x="252.99999999999997" y="254.0">CollectionsAndGeneric.Jukebox2</node>
+    <node x="228.0" y="1003.0">CollectionsAndGeneric.CollectionsInterface</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="CollectionsAndGeneric.Cat" target="CollectionsAndGeneric.Animal">
+      <point x="0.0" y="-25.5" />
+      <point x="209.0" y="609.0" />
+      <point x="236.4142857142857" y="609.0" />
+      <point x="-25.19999999999999" y="25.5" />
+    </edge>
+    <edge source="CollectionsAndGeneric.Jukebox2" target="CollectionsAndGeneric.Song">
+      <point x="-77.66666666666669" y="-59.0" />
+      <point x="291.83333333333326" y="234.0" />
+      <point x="323.2222222222222" y="234.0" />
+      <point x="-13.25" y="92.0" />
+    </edge>
+    <edge source="CollectionsAndGeneric.Jukebox" target="CollectionsAndGeneric.Song">
+      <point x="-1.4210854715202004E-14" y="-59.0" />
+      <point x="116.5" y="214.0" />
+      <point x="270.2222222222222" y="214.0" />
+      <point x="-66.25" y="92.0" />
+    </edge>
+    <edge source="CollectionsAndGeneric.AnimalEat" target="CollectionsAndGeneric.Animal">
+      <point x="108.00000000000003" y="-114.0" />
+      <point x="330.3142857142857" y="710.0" />
+      <point x="293.5" y="710.0" />
+      <point x="293.5" y="599.0" />
+      <point x="286.81428571428575" y="599.0" />
+      <point x="25.200000000000045" y="25.5" />
+    </edge>
+    <edge source="CollectionsAndGeneric.AnimalEat" target="CollectionsAndGeneric.Cat">
+      <point x="-35.99999999999997" y="-114.0" />
+      <point x="186.31428571428572" y="710.0" />
+      <point x="209.0" y="710.0" />
+      <point x="0.0" y="25.5" />
+    </edge>
+    <edge source="CollectionsAndGeneric.Dog" target="CollectionsAndGeneric.Animal">
+      <point x="0.0" y="-25.5" />
+      <point x="63.0" y="599.0" />
+      <point x="211.2142857142857" y="599.0" />
+      <point x="-50.400000000000006" y="25.5" />
+    </edge>
+    <edge source="CollectionsAndGeneric.HeadFirstProject" target="CollectionsAndGeneric.Jukebox">
+      <point x="-76.25" y="-25.5" />
+      <point x="289.9375" y="412.0" />
+      <point x="58.25" y="412.0" />
+      <point x="-58.25" y="59.0" />
+    </edge>
+    <edge source="CollectionsAndGeneric.HeadFirstProject" target="CollectionsAndGeneric.Song">
+      <point x="45.75" y="-25.5" />
+      <point x="411.9375" y="402.0" />
+      <point x="496.5" y="402.0" />
+      <point x="496.5" y="224.0" />
+      <point x="402.7222222222222" y="224.0" />
+      <point x="66.25" y="92.0" />
+    </edge>
+    <edge source="CollectionsAndGeneric.HeadFirstProject" target="CollectionsAndGeneric.Jukebox2">
+      <point x="-15.25" y="-25.5" />
+      <point x="350.9375" y="392.0" />
+      <point x="311.25" y="392.0" />
+      <point x="-58.25" y="59.0" />
+    </edge>
+    <edge source="CollectionsAndGeneric.AnimalEat" target="CollectionsAndGeneric.Dog">
+      <point x="-107.99999999999997" y="-114.0" />
+      <point x="114.31428571428572" y="710.0" />
+      <point x="94.5" y="710.0" />
+      <point x="31.5" y="25.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.6916201117318436" x="288.31663974151854" y="417.7124394184168" />
+  <SelectedNodes>
+    <node>CollectionsAndGeneric.Song</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
