@@ -1,3 +1,5 @@
+package CollectionsAndGeneric;
+
 import com.google.common.collect.ImmutableList;
 
 import java.util.Collections;

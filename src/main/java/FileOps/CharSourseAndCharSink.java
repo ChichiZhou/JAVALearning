@@ -30,6 +30,7 @@ public class CharSourseAndCharSink {
 
         // 使用 CharSink 将数据写入文件
         // 这里可能出现的一个错误是，如果本来这个文件 writeFilePath 已经建立，则可能会出错
+        // https://geek-docs.com/java/java-tutorial/javaappendtofile.html
         CharSink charSink = Files.asCharSink(new File(writeFilePath), Charsets.UTF_8);
         charSink.write("Hello everyone, I am XiaoFenHong");
 
