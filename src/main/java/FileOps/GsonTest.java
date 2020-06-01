@@ -21,6 +21,7 @@ public class GsonTest {
         System.out.println(personString);
         // 写入到 file 中的步骤跟 JsonObject 中写入的步骤一致
 
+
         // 读取 json 文件，将json文件转换成object
         String readGson = FileUtils.readFileToString(new File("src/main/resources/gsonTest.json"));
         Person readGsonPerson = new Gson().fromJson(readGson, Person.class);

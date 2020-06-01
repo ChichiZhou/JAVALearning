@@ -40,13 +40,26 @@ public class Main {
         // 如果要用 toBuilder，一定要有一个具体的对象才行
         TestCombine.TestCombineBuilder3 testCombineBuilder2 = testCombine2.toBuilder();
 
+        /**
+         * 使用 builderMethodName 和 TestCombineBuilder
+         */
         TestCombine.TestCombineBuilder testCombineBuilder1 = TestCombine.testCombineBuilder();
 
         TestCombine testCombine3 = testCombineBuilder1.inputValue("hezho").build();  // 区别在这里，这里的 inputValue 是 create 的参数
         System.out.println(testCombine3.getName());
 
-        // 也可以直接用静态方法生成。
+        /**
+         * 也可以直接用静态方法生成。
+         */
         TestCombine testCombine4 = TestCombine.create2();
+
+        TestCombine testCombine5 = TestCombine.testCombineBuilder3().build();
+        System.out.println(testCombine5.getName());
+
+        TestCombine testCombine6 = TestCombine.create3();
+        System.out.println(testCombine6.getName());
+
+
 
 
 

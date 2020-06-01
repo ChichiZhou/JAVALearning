@@ -11,6 +11,9 @@ import java.util.Map;
 public class JsonObject {
     public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException, IOException {
         // https://blog.csdn.net/u014260748/article/details/41521123
+        /**
+         * 写文件
+         */
         // 直接利用 jsonObject 生成一个json 文件
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("name", "Shilin");
@@ -46,6 +49,7 @@ public class JsonObject {
         // 将 jsonObject 输出到文件中
         String jsonString = jsonObject.toString();
         File jsonFile = new File("src/main/resources/jsonFile.json");
+        // 如果存在，则删除
         if(jsonFile.exists()) {
             jsonFile.delete();
         } else {
@@ -58,9 +62,14 @@ public class JsonObject {
             write.close();
         }
 
-        // 读取某个json中的文件
+
+
+        /**
+         * 读取某个json中的文件
+         */
         File readJsonFile = new File("src/main/resources/readJsonFile.json");
         String content = FileUtils.readFileToString(readJsonFile);  // 直接把 file 的内容转变成字符串
+
         System.out.println("The json content is ");
         System.out.println(content);
         JSONObject readJson = new JSONObject(content);
@@ -72,7 +81,7 @@ public class JsonObject {
         System.out.println("The JSONArray is");
         System.out.println(hobbies);
 
-        // 一种写法
+        // 把 hobbies 转成 ArrayList
         List<String> readJsonList = new ArrayList<>();
         for(Object element : hobbies){
             readJsonList.add((String)element);
@@ -88,8 +97,5 @@ public class JsonObject {
 
         System.out.println("The List of JSONArray2 is");
         System.out.println(readJsonList2);
-
-
-
     }
 }

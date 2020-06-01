@@ -14,5 +14,4 @@ public class UseBuffer{
             stringBuffer.append(line);
         }
     }
-
 }

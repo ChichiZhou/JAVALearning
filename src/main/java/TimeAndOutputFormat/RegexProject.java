@@ -16,6 +16,10 @@ public class RegexProject {
             System.out.println("true");
         }
 
+        // 这里使用了 matcher
+        // matcher 会根据 () 把需要匹配的字符串分成若干个 group
+        // 而第一个 group （编号为0）是最外面的那个 group
+        // 然后其它的 group 依次排列
         String test = "Operation Time:\n2020-02-18T22:54:41.932Z\n\nSucceeded: 1\nCounts: distinct = 1;deleted 0\n\nCreated: \n1. ROTHWELL1\nDeleted: Null";
         Pattern pattern = Pattern.compile(timeformat);
         Matcher matcher = pattern.matcher(test);

@@ -20,6 +20,7 @@ public class CollectionsTest {
 
         List<String> testCollectionSingleton = ImmutableList.<String>builder().add("1").add("1").build();
 
+        System.out.println(testCollectionSingleton);
         Set<List<String>> testResult = Collections.singleton(testCollectionSingleton);
 
         System.out.println(testResult);
