@@ -65,14 +65,6 @@ public class Main {
 
         TestCombine testCombine6 = TestCombine.create3();
         System.out.println(testCombine6.getName());
-
-
-
-
-
-
-
-
     }
 }
 

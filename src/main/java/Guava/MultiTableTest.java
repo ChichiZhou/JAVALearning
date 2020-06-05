@@ -1,6 +1,7 @@
 package Guava;
 
 import com.google.common.collect.ImmutableTable;
+import com.google.common.collect.Lists;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
@@ -43,12 +44,12 @@ public class MultiTableTest {
         // https://www.baeldung.com/java-merge-maps
         // 这里用到了 Map.Entry 作为 key - value pair
         System.out.println(
-                valueMapCollections.stream().flatMap(map->map.entrySet().stream())
-                        .collect(Collectors.toMap(
-                                Map.Entry::getKey,
-                                Map.Entry::getValue,
-                                (v1, v2) -> (v1+v2)
-                        ))
+            valueMapCollections.stream().flatMap(map->map.entrySet().stream())
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (v1, v2) -> (v1+v2)    /* 这个的作用是为了防止有两个重复的 key */
+                ))
         );
 
 
@@ -69,16 +70,29 @@ public class MultiTableTest {
 
         // Displaying elements in Stream
         intStream.forEach(str -> System.out.print(str + " "));
+        System.out.println();
+
+        List<String> testStringList = Arrays.asList("HELLO", "WORLD", "TEXAS");
+
+        testStringList.stream().forEach(str -> System.out.print(str + " "));
+        System.out.println();
         System.out.println("**********");
 
         // --------- Using Stream.of() ---------
 
         // to convert int array into Stream
         Stream<int[]> stream = Stream.of(arr, arr1);
+        Stream testNewString = Stream.of(testStringList);
+        testNewString.forEach(str -> System.out.print(str + " "));
 
         stream.flatMapToInt(Arrays::stream).forEach(str -> System.out.print(str + " "));
+        System.out.println();
         System.out.println("**********");
 
+        Stream<String> testStringStream = Stream.of("THIS", "IS", "TESTSTREAM");
+        testStringStream.forEach(str -> System.out.print(str + " "));
+        System.out.println();
+        System.out.println("**********");
 
         List<String> test1 = Arrays.asList("1", "2");
         List<String> test2 = Arrays.asList("1", "2");
