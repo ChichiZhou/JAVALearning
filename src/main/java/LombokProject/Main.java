@@ -39,6 +39,8 @@ public class Main {
         TestCombine testCombine2 = TestCombine.create("hezho");
         // 如果要用 toBuilder，一定要有一个具体的对象才行
         TestCombine.TestCombineBuilder3 testCombineBuilder2 = testCombine2.toBuilder();
+        System.out.println("使用 tobuilder");
+        System.out.println(testCombineBuilder2.build().getName());
 
         /**
          * 使用 builderMethodName 和 TestCombineBuilder
@@ -46,7 +48,12 @@ public class Main {
         TestCombine.TestCombineBuilder testCombineBuilder1 = TestCombine.testCombineBuilder();
 
         TestCombine testCombine3 = testCombineBuilder1.inputValue("hezho").build();  // 区别在这里，这里的 inputValue 是 create 的参数
+
         System.out.println(testCombine3.getName());
+
+        TestCombine useOneCommand = TestCombine.testCombineBuilder().inputValue("Shilin").build();
+        System.out.println("可以把上述两行合并成一行");
+        System.out.println(useOneCommand.getName());
 
         /**
          * 也可以直接用静态方法生成。
@@ -58,6 +65,8 @@ public class Main {
 
         TestCombine testCombine6 = TestCombine.create3();
         System.out.println(testCombine6.getName());
+
+
 
 
 

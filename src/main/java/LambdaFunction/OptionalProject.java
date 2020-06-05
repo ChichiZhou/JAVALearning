@@ -50,7 +50,7 @@ public class OptionalProject {
         String address = null;                            // 当可以是 null 的时候，需要用 .ofNullable()
         Optional<String> optAddress = Optional.ofNullable(address);
         System.out.println(optAddress);                   // 当是 null 当时候，会输出一个 Optional.empty
-        System.out.println(optAddress.isPresent() ? optName.get() : "No");  // 检查是否存在
+        System.out.println(optAddress.isPresent() ? optName.get() : "No");  // 检查是否存在 ！！！！！！
         System.out.println("\n************\n");
 
         System.out.println("The type of Optional object is" + optName.getClass().getName());   // 输出的结果是 Optional
@@ -60,11 +60,13 @@ public class OptionalProject {
          * 如果没有 .orElse() 那么返回的就是一个 Optional["0"]
          * 但是如果加了 orElse() 那么返回的就是和 value 同一个类型的了
          */
-        System.out.println(Optional.ofNullable("0").orElse("Nothing to show"));
-        System.out.println(Optional.ofNullable("0"));
+        System.out.println("利用 orElse 来输出");
+        System.out.println(Optional.ofNullable("0").orElse("Nothing to show"));  // 这里输出的是 0，而不是 Optional[0]
+        System.out.println(Optional.ofNullable("0"));                                  // 这里输出的是  Optional[0]
         String salary = Optional.ofNullable("0").orElse("Nothing to show");     // orElse 会返回一个和 Optional<T> 中 T 同一个类型的变量
         String salary1 = Optional.ofNullable("0").get();
         System.out.println(salary);
+        System.out.println(salary1);
         List<String> testList = new LinkedList<>();
         Optional<String> result = testList.stream().filter(p->p!=null).findFirst();
         System.out.println(format("The result is %s", result.orElse(null)));

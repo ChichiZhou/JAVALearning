@@ -3,10 +3,12 @@ package Guava;
 import com.google.common.collect.ImmutableTable;
 
 import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class MultiTableTest {
@@ -38,9 +40,50 @@ public class MultiTableTest {
         System.out.println(valueMapCollections.stream().flatMap(p->p.values().stream()).collect(Collectors.toSet()));
 
         // 如何返回一个 map ？？？
+        // https://www.baeldung.com/java-merge-maps
+        // 这里用到了 Map.Entry 作为 key - value pair
+        System.out.println(
+                valueMapCollections.stream().flatMap(map->map.entrySet().stream())
+                        .collect(Collectors.toMap(
+                                Map.Entry::getKey,
+                                Map.Entry::getValue,
+                                (v1, v2) -> (v1+v2)
+                        ))
+        );
+
 
         // Stream.of 和 .stream 之间的区别是什么？？？
+        // https://www.geeksforgeeks.org/difference-between-stream-of-and-arrays-stream-method-in-java/
+        // https://stackoverflow.com/questions/39874242/what-is-the-difference-between-stream-and-stream-of
         System.out.println("The Stream.of rowMap.values() flatMap is");
         System.out.println(valueMapCollections.stream().flatMap(p->Stream.of(p.values())).collect(Collectors.toList()));
+
+        System.out.println("Difference between Stream.of and .stream()");
+        int arr[] = { 1, 2, 3, 4, 5 };
+        int arr1[] = { 1, 2, 3, 4, 5 };
+
+        // --------- Using Arrays.stream() ---------
+
+        // to convert int array into Stream
+        IntStream intStream = Arrays.stream(arr);
+
+        // Displaying elements in Stream
+        intStream.forEach(str -> System.out.print(str + " "));
+        System.out.println("**********");
+
+        // --------- Using Stream.of() ---------
+
+        // to convert int array into Stream
+        Stream<int[]> stream = Stream.of(arr, arr1);
+
+        stream.flatMapToInt(Arrays::stream).forEach(str -> System.out.print(str + " "));
+        System.out.println("**********");
+
+
+        List<String> test1 = Arrays.asList("1", "2");
+        List<String> test2 = Arrays.asList("1", "2");
+
+        List<String> result = Stream.of(test1, test2).flatMap(List::stream).collect(Collectors.toList());
+        System.out.println(result);
     }
 }

@@ -28,7 +28,7 @@ public class TestCombine {
         return new TestCombine("Shillin");
     }
 
-    // toBuilder 表示什么？？？
+    // toBuilder 如果 toBuilder 是 true, 则可以直接用 toBuilder 作为 builderMethodName
     @lombok.Builder(builderClassName = "TestCombineBuilder3", builderMethodName = "testCombineBuilder3", toBuilder = true)
     public static TestCombine create3(){
         return new TestCombine("HEZHO");

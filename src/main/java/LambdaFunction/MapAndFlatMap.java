@@ -27,5 +27,8 @@ public class MapAndFlatMap {
         List<String> resultList2 = testList.stream().flatMap(p->testMap.get(p).stream()).collect(Collectors.toList());
         System.out.println(resultList2);
 
+
+
+
     }
 }
