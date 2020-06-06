@@ -63,6 +63,7 @@ public class Main {
         System.out.println(Collections.frequency(integerList, 1));   // 这里必须是继承 Collection 接口的的才能这么做.
         Set<String> integerSet = new LinkedHashSet<>(integerList);
         integerSet.stream().forEach(key -> Collections.frequency(integerList, key));
+        
         // 使用 Collections.frequency 来构建一个 map
         Map<String, Integer> testMap = integerSet.stream().collect(Collectors.toMap(key->key, key -> Collections.frequency(integerList, key)));
         System.out.println("使用 Collections.frequency 构建一个 map");

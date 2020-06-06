@@ -14,7 +14,6 @@ public class Main {
         // Function 也可以是 求P得P的
         ImmutableMap<String, String> uniqueIndexString = Maps.uniqueIndex(list, p->p);
 
-
         System.out.println(uniqueIndex.keySet());
         System.out.println(uniqueIndex);
         System.out.println("求P得P如下：");
