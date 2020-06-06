@@ -97,7 +97,8 @@ public class MultiTableTest {
         List<String> test1 = Arrays.asList("1", "2");
         List<String> test2 = Arrays.asList("1", "2");
 
-        List<String> result = Stream.of(test1, test2).flatMap(List::stream).collect(Collectors.toList());
+        // 这里需要一个 flatten
+        List<String> result = Stream.of(test1, test2).flatMap(List::stream).collect(Collectors.toList());  // flatMap 起到 把得到的 stream 再融合的作用
         System.out.println(result);
     }
 }

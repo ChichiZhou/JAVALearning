@@ -28,9 +28,11 @@ public class TestCombine {
         return new TestCombine("Shillin");
     }
 
-    // toBuilder 如果 toBuilder 是 true, 则可以直接用 toBuilder 作为 builderMethodName
+    // toBuilder 如果 toBuilder 是 true, 则可以使用 toBuilder 来修改已经创建了的对象中的某些值
+    // 比如，可以用 toBuilder 来修改这里的 value
+    // https://www.cnblogs.com/lori/p/9024933.html
     @lombok.Builder(builderClassName = "TestCombineBuilder3", builderMethodName = "testCombineBuilder3", toBuilder = true)
-    public static TestCombine create3(){
-        return new TestCombine("HEZHO");
+    public static TestCombine create3(@NonNull String name){
+        return new TestCombine(name);
     }
 }

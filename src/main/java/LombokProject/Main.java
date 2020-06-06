@@ -36,11 +36,16 @@ public class Main {
          * Use @lombok.Builder and the RequiredArgsConstructor
          */
 
-        TestCombine testCombine2 = TestCombine.create("hezho");
+        TestCombine testCombine2 = TestCombine.create3("hezho");
         // 如果要用 toBuilder，一定要有一个具体的对象才行
         TestCombine.TestCombineBuilder3 testCombineBuilder2 = testCombine2.toBuilder();
-        System.out.println("使用 tobuilder");
-        System.out.println(testCombineBuilder2.build().getName());
+        System.out.println("Combine is");
+        System.out.println(testCombine2.getName());
+        System.out.println("使用 toBuilder");
+        System.out.println(testCombineBuilder2.name("Change the Name").build().getName());
+//        TestCombine testTobuilder = TestCombine.toBuilder
+        TestCombine testTobuilder1 = TestCombine.testCombineBuilder3().name("SHL").build();
+
 
         /**
          * 使用 builderMethodName 和 TestCombineBuilder
@@ -60,10 +65,10 @@ public class Main {
          */
         TestCombine testCombine4 = TestCombine.create2();
 
-        TestCombine testCombine5 = TestCombine.testCombineBuilder3().build();
+        TestCombine testCombine5 = TestCombine.testCombineBuilder3().name("LOVE SHILIN").build();
         System.out.println(testCombine5.getName());
 
-        TestCombine testCombine6 = TestCombine.create3();
+        TestCombine testCombine6 = TestCombine.create3("HZH");
         System.out.println(testCombine6.getName());
     }
 }
