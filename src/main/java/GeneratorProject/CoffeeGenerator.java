@@ -1,13 +1,7 @@
 package GeneratorProject;
 
-import java.io.File;
 import java.util.Iterator;
 import java.util.Random;
-
-import sun.rmi.rmic.BatchEnvironment;
-import sun.rmi.rmic.Generator;
-import sun.rmi.rmic.Main;
-import sun.tools.java.ClassDefinition;
 
 public class CoffeeGenerator implements DefinedGenerator<Coffee>, Iterable<Coffee> {
 

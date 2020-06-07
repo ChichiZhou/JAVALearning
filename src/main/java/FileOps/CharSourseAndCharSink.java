@@ -8,9 +8,6 @@ import com.google.common.io.Files;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
-import java.nio.charset.Charset;
-
-import static com.sun.xml.internal.org.jvnet.fastinfoset.FastInfosetSerializer.UTF_8;
 
 public class CharSourseAndCharSink {
     public static void main(String[] args) throws IOException {
