@@ -10,6 +10,7 @@ public class ArraysUsage {
          * Arrays 表示常规的对 Arrays 的操作，比如 排序 和 搜索
          */
         // 最常用的，把散落的 Object 组成一个 List
+        // 但是这里仅限于 List, 而 List 只是一个接口，无法进行实际的操作
         List<String> stringList = Arrays.asList("HELLO", "WORLD");
 
         String[] original = new String[2];

@@ -6,8 +6,7 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.io.FileUtils;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 public class GsonTest {
     public static void main(String[] args) throws IOException {
@@ -20,6 +19,11 @@ public class GsonTest {
         String personString = gson.toJson(person);
         System.out.println(personString);
         // 写入到 file 中的步骤跟 JsonObject 中写入的步骤一致
+        Writer write = new OutputStreamWriter(new FileOutputStream(new File("src/main/resources/gsonWriteTest.json")), "UTF-8");
+        write.write(personString);
+        // 下面这两个是必要的么？？？
+        write.flush();
+        write.close();
 
 
         // 读取 json 文件，将json文件转换成object
