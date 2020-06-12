@@ -36,6 +36,7 @@ public class Main {
         System.out.println(Day.Monday.name());
 
         //
+        System.out.println("Use mmmmm");
         Optional<Day> dayTest = Day.get("Monday");
         System.out.println(dayTest.get());
         System.out.println(dayTest.get().getPeriod());
