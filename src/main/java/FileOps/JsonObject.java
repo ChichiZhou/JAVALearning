@@ -75,6 +75,9 @@ public class JsonObject {
 
         System.out.println("The json content is ");
         System.out.println(content);
+        /**
+         * 因为这里是一个 String，所以用 JSON 提取有用信息，这样就不用使用 regex 通过匹配来做了
+         */
         JSONObject readJson = new JSONObject(content);
         System.out.println(readJson.getString("sex"));
         System.out.println(readJson.getString("name"));

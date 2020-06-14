@@ -7,10 +7,16 @@ import static java.lang.String.format;
 
 public class RegexProject {
     public static void main(String[] args) {
-        // 如果仅仅是想验证是否能够匹配字符串，可以直接用 Pattern.matches()
-        // 如何想提取匹配的某部分，则需要用 Matcher matcher = pattern.match(test) 然后找 matcher.group()
+        /**
+         * https://www.cnblogs.com/hubingxu/archive/2012/02/17/2355516.html
+         * 如果是全部匹配，则用 match，使用 Pattern.matches
+         *
+         * 如果是部分匹配，则用 find
+         */
+
         String timeformat = "([0-9]{4})-(0?[1-9]|1[012]})-(0?[1-9]|[12][0-9]|3[01])T([01]?[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]\\.[0-9]+Z";
         Pattern r = Pattern.compile("([0-9]{4})-(0?[1-9]|1[012]})-(0?[1-9]|[12][0-9]|3[01])T([01]?[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]");
+
 
         if(Pattern.matches(timeformat, "2020-02-18T22:38:14.192Z")){
             System.out.println("true");
