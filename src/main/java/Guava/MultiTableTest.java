@@ -52,10 +52,14 @@ public class MultiTableTest {
                 ))
         );
 
+        /**
+         * Stream.of 和 .stream 之间的区别是什么？？？
+         * https://www.geeksforgeeks.org/difference-between-stream-of-and-arrays-stream-method-in-java/
+         * https://stackoverflow.com/questions/39874242/what-is-the-difference-between-stream-and-stream-of
+         *
+         * .stream 只能出现在继承 Collection 的接口上，比如 List, Arrays, Set 上 （没有Map）
+         */
 
-        // Stream.of 和 .stream 之间的区别是什么？？？
-        // https://www.geeksforgeeks.org/difference-between-stream-of-and-arrays-stream-method-in-java/
-        // https://stackoverflow.com/questions/39874242/what-is-the-difference-between-stream-and-stream-of
         System.out.println("The Stream.of rowMap.values() flatMap is");
         System.out.println(valueMapCollections.stream().flatMap(p->Stream.of(p.values())).collect(Collectors.toList()));
 
