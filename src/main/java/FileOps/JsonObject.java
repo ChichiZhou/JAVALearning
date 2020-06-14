@@ -68,6 +68,9 @@ public class JsonObject {
          * 读取某个json中的文件
          */
         File readJsonFile = new File("src/main/resources/readJsonFile.json");
+        /**
+         * 这里直接用了这个包装之后的方法，直接把 Object 转成 String
+         */
         String content = FileUtils.readFileToString(readJsonFile);  // 直接把 file 的内容转变成字符串
 
         System.out.println("The json content is ");

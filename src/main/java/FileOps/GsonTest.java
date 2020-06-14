@@ -27,6 +27,9 @@ public class GsonTest {
 
 
         // 读取 json 文件，将json文件转换成object
+        /**
+         * 直接用 FileUtils.readFileToString
+         */
         String readGson = FileUtils.readFileToString(new File("src/main/resources/gsonTest.json"));
         Person readGsonPerson = new Gson().fromJson(readGson, Person.class);
         System.out.println("The person information read from json file is");
