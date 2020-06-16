@@ -30,14 +30,21 @@ public class RegexProject {
         Pattern pattern = Pattern.compile(timeformat);
         Matcher matcher = pattern.matcher(test);
 
-        if (matcher.find())
+        if (matcher.find())   // 这里会返回一个 boolean
         {
             System.out.println("true");
+            // 下面会调用 group 许多次
+            System.out.println("Print the start");
             System.out.println(matcher.group());
+            System.out.println("The start for group() is " + matcher.start());
             System.out.println(matcher.group(1));
+            System.out.println("The start for group(1) is " + matcher.start());
             System.out.println(matcher.group(2));
+            System.out.println("The start for group(2) is " + matcher.start());
             System.out.println(matcher.group(3));
+            System.out.println("The start for group(3) is " + matcher.start());
             System.out.println(matcher.group(4));
+            System.out.println("The start for group(4) is " + matcher.start());
             //System.out.println(matcher.group(5));
         }
 
@@ -61,8 +68,21 @@ public class RegexProject {
         String filter2 = " - ([A-Z]+[-_A-Z0-9]*)";
         String filter3 = " - .*";
         String testFilter21 = " - UDP_MAP";
+        Pattern testMatcherPattern = Pattern.compile(filter2);
+        Matcher testMatcherMatcher = testMatcherPattern.matcher(testFilter21);
 
         System.out.println(format("The result of testFilter1 is %s", Pattern.matches(filter2, testFilter21)));
         System.out.println(format("The result of testFilter1 is %s", Pattern.matches(filter3, testFilter21)));
+
+        System.out.println(format("first TEST .find() is %s", testMatcherMatcher.find()));
+        System.out.println(format("TEST .matches() is %s", testMatcherMatcher.matches()));
+
+        /**
+         * 由于 .matches() 会改变 this.last 的值，但是 .find() 需要采用这个 this.last
+         * 所以在调用 .matches() 之后再调用 .find() 就会出现错误
+         */
+
+        System.out.println(format("second TEST .find() is %s", testMatcherMatcher.find()));
+
     }
 }

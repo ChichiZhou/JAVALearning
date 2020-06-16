@@ -4,6 +4,9 @@ import java.util.*;
 
 public class IteratorProject {
     public static void main(String[] args) {
+        /**
+         * https://www.cnblogs.com/hasse/p/5024193.html
+         */
         Set<String> testSet = new HashSet<>();
         testSet.add("1");
         testSet.add("2");
@@ -14,6 +17,8 @@ public class IteratorProject {
             System.out.println(iterator.next());
         }
 
+        // 如果是 Maps，则需要用 entrySet() 然后才能用 iterator
+        // Stream 中有 iterator 这个方法
         Map<String, String> testMap = new HashMap<>();
         testMap.put("1", "1");
         testMap.put("2", "2");

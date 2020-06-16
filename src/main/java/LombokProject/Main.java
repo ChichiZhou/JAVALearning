@@ -19,9 +19,9 @@ public class Main {
         TestBuilder testBulder = TestBuilder.TestBuilderMethodName().testBuilderName("HELLO WORLD").build();
         System.out.println(testBulder.getTestBuilderName());
 
-        TestBuilder testBuilder2 = new TestBuilder("Shilin");
+        TestBuilder testBuilder2 = new TestBuilder("Shilin");   // 原本是 Shilin
         TestBuilder.TestBuilderClassName ttt = testBuilder2.toBuilder();
-        ttt.testBuilderName("hezho").build();
+        ttt.testBuilderName("hezho").build();       // 改了之后是 hezho
 
 
         /**

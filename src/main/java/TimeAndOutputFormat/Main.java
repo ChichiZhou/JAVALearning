@@ -143,5 +143,19 @@ public class Main {
             System.out.println("no empty");
         }
 
+
+        /**
+         * Test filter
+         */
+
+        System.out.println("TEST FILTER");
+
+        List<String> testFilter = new ArrayList<>(Arrays.asList("1", "2"));
+
+        List<String> filterResult = testFilter.stream().filter(p->!p.equals("1")).map(p->p+"ffff").collect(Collectors.toList());
+
+        System.out.println("The filter result is");
+        System.out.println(filterResult);
+
     }
 }
