@@ -29,6 +29,11 @@ public class RegexProject {
         String test = "Operation Time:\n2020-02-18T22:54:41.932Z\n\nSucceeded: 1\nCounts: distinct = 1;deleted 0\n\nCreated: \n1. ROTHWELL1\nDeleted: Null";
         Pattern pattern = Pattern.compile(timeformat);
         Matcher matcher = pattern.matcher(test);
+        System.out.println("TEST Pattern.matches");
+        /**
+         * Pattern.matches() 是把需要匹配的 test 当做一个整体来匹配的。并不管里面的 () 是否匹配上了
+         */
+        System.out.println(format("TEST Pattern matche is %s", Pattern.matches(timeformat, test)));
 
         if (matcher.find())   // 这里会返回一个 boolean
         {
