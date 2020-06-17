@@ -13,6 +13,9 @@ public class IteratorProject {
 
         Iterator iterator = testSet.iterator();
 
+        /**
+         * iterator.next() 能够返回 Collection 中的下一个值
+         */
         while(iterator.hasNext()){
             System.out.println(iterator.next());
         }

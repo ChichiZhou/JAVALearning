@@ -26,7 +26,9 @@ public class Main {
          *
          * 如果是单纯的写入字符串,则使用 FileWriter，但是这里用到了 Buffer。
          * 如果是写入，则用到的是 BufferedWriter
+         * 如果是读取，则使用 FileReader，并且也是用 Buffer
          * 如果是读取，则用到的是 BufferedReader
+         *
          *
          */
         String filePath = "src/main/resources/testJavaFile.txt";
