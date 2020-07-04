@@ -1,5 +1,7 @@
 package CollectionsAndGeneric;
 
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 
 import java.util.*;
@@ -30,6 +32,9 @@ public class MapsUsage {
         // 注意这里的变量顺序
         Map<String, String> testUnique = Maps.uniqueIndex(keySet, p->p + "Unique");
         testUnique.entrySet().stream().forEach(p-> System.out.println("The key is: " + p.getKey() + "; The value is " + p.getValue()));
+
+        List<String> keyList = ImmutableList.of("1", "1", "2");
+        ImmutableMap<String, String> result = Maps.uniqueIndex(keyList.iterator(), p->p);
 
     }
 }

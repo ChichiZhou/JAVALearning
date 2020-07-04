@@ -70,13 +70,13 @@ public class RegexProject {
         System.out.println(format("The result of testFilter1 is %s", Pattern.matches(filter, testFilter1)));
         System.out.println(format("The result of testFilter2 is %s", Pattern.matches(filter, testFilter2)));
 
-        String filter2 = " - ([A-Z]+[-_A-Z0-9]*)";
+        String filter2 = " - ([A-Z]+[-_A-Z0-9/]*)";
         String filter3 = " - .*";
-        String testFilter21 = " - UDP_MAP";
+        String testFilter21 = " - UDP_MAP/G";
         Pattern testMatcherPattern = Pattern.compile(filter2);
         Matcher testMatcherMatcher = testMatcherPattern.matcher(testFilter21);
 
-        System.out.println(format("The result of testFilter1 is %s", Pattern.matches(filter2, testFilter21)));
+        System.out.println(format("The result of filter2 is %s", Pattern.matches(filter2, testFilter21)));
         System.out.println(format("The result of testFilter1 is %s", Pattern.matches(filter3, testFilter21)));
 
         System.out.println(format("first TEST .find() is %s", testMatcherMatcher.find()));
@@ -88,6 +88,17 @@ public class RegexProject {
          */
 
         System.out.println(format("second TEST .find() is %s", testMatcherMatcher.find()));
+
+        String testP = "(he).*";
+        String inputTest = "hello.sh";
+        String inputTest2 = "fuckhello.sh";
+        Pattern testPPattern = Pattern.compile(testP);
+        Matcher testPMatcher = testPPattern.matcher(inputTest);
+
+        System.out.println("卡成狗");
+        System.out.println(testPMatcher.find());
+        System.out.println("cnm " + Pattern.matches(testP, inputTest2));
+
 
     }
 }

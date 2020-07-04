@@ -14,6 +14,7 @@ public class CharSourseAndCharSink {
         String readFilePath = "src/main/resources/testCharSource.txt";
         String writeFilePath = "src/main/resources/testCharSink.txt";
         // 使用 CharSource
+        // CharSource 是什么？
         CharSource charSource = Files.asCharSource(new File(readFilePath), Charsets.UTF_8);
         BufferedReader charBufferReader = charSource.openBufferedStream();
         String line = charBufferReader.readLine();
